@@ -143,7 +143,7 @@ export function Hero({ scrollToRef, transition }: HeroProps) {
 
       <Flex flex={1} />
 
-      <Flex
+      {/* <Flex
         position="absolute"
         width="100%"
         centered
@@ -170,7 +170,7 @@ export function Hero({ scrollToRef, transition }: HeroProps) {
             </Hover>
           </Flex>
         </RiseIn>
-      </Flex>
+      </Flex> */}
     </Flex>
   )
 }

@@ -205,6 +205,9 @@ module.exports = {
         fallback: {
           // - react-markdown requires path
           path: require.resolve('path-browserify'),
+          // - react-native-dotenv requires fs and os
+          fs: false,
+          os: false,
         },
       })
 

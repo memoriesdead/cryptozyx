@@ -28,61 +28,13 @@ export function DownloadWalletRow({
         justifyContent="center"
         alignItems="center"
         gap="$gap8"
-        backgroundColor="$accent2"
         p="$spacing12"
         {...rest}
         $md={{ borderRadius: '$rounded20', mt: 0, p: '$spacing16', ...rest.$md }}
       >
-        <Text variant={titleTextVariant} color="$accent1" mr="auto" $md={{ variant: 'buttonLabel3' }}>
+        {/* <Text variant={titleTextVariant} color="$accent1" mr="auto" $md={{ variant: 'buttonLabel3' }}>
           {isMobileWeb ? t('common.getUniswapWallet.mobile') : t('common.getUniswapWallet')}
-        </Text>
-        <Trace logPress element={ElementName.ExtensionDownloadButton}>
-          <Anchor
-            href={uniswapUrls.chromeExtension}
-            target="_blank"
-            rel="noreferrer"
-            height={iconSize}
-            $md={{ display: 'none' }}
-            onPress={(e) => e.stopPropagation()}
-          >
-            <Wiggle>
-              <GoogleChromeLogo size={iconSize} />
-            </Wiggle>
-          </Anchor>
-        </Trace>
-        {(isWebIOS || !isMobileWeb) && (
-          <Trace logPress element={ElementName.UniswapWalletModalDownloadButton}>
-            <Anchor
-              href={uniswapUrls.appStoreDownloadUrl}
-              target="_blank"
-              rel="noreferrer"
-              height={iconSize}
-              onPress={(e) => e.stopPropagation()}
-            >
-              <Wiggle>
-                <AppStoreLogo size={iconSize} />
-              </Wiggle>
-            </Anchor>
-          </Trace>
-        )}
-        {(isWebAndroid || !isMobileWeb) && (
-          <Trace logPress element={ElementName.UniswapWalletModalDownloadButton}>
-            <Anchor
-              href={uniswapUrls.playStoreDownloadUrl}
-              target="_blank"
-              rel="noreferrer"
-              height={iconSize}
-              onPress={(e) => e.stopPropagation()}
-            >
-              <Wiggle>
-                <Flex backgroundColor="black" p="$spacing2" borderRadius="$rounded4">
-                  <GooglePlayStoreLogo height={iconSize - 4} width={iconSize - 4} />
-                </Flex>
-              </Wiggle>
-            </Anchor>
-          </Trace>
-        )}
-        <RightArrow size={iconSize} color="$neutral1" />
+        </Text> */}
       </Flex>
     </TouchableArea>
   )

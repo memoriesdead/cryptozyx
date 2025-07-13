@@ -11,7 +11,6 @@ import { MAX_WIDTH_MEDIA_BREAKPOINT } from 'components/Tokens/constants'
 import { manualChainOutageAtom } from 'featureFlags/flags/outageBanner'
 import { useOnGlobalChainSwitch } from 'hooks/useGlobalChainSwitch'
 import { useResetAtom } from 'jotai/utils'
-import ExploreStatsSection from 'pages/Explore/ExploreStatsSection'
 import ProtocolFilter from 'pages/Explore/ProtocolFilter'
 import { ExploreTab } from 'pages/Explore/constants'
 import { useExploreParams } from 'pages/Explore/redirects'
@@ -178,7 +177,6 @@ const Explore = ({ initialTab }: { initialTab?: ExploreTab }) => {
     <Trace logImpression page={InterfacePageName.ExplorePage} properties={{ chainName: chainInfo?.backendChain.chain }}>
       <ExploreContextProvider chainId={chainInfo?.id}>
         <Flex width="100%" minWidth={320} pt="$spacing24" pb="$spacing48" px="$spacing40" $md={{ p: '$spacing16' }}>
-          <ExploreStatsSection />
           <Flex
             ref={tabNavRef}
             row

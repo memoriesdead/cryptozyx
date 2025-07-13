@@ -107,8 +107,6 @@ export function MenuDropdown({ close }: { close?: () => void }) {
             />
           ))}
           <Separator />
-          <DownloadApp onClick={close} />
-          <Socials iconSize="25px" />
           {isConversionTrackingEnabled && <LegalAndPrivacyMenu closeMenu={close} />}
         </Flex>
       </Container>

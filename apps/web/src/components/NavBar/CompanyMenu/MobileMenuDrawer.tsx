@@ -128,8 +128,6 @@ export function MobileMenuDrawer({ isOpen, closeMenu }: { isOpen: boolean; close
                 <PreferenceSettings showHeader={false} showThemeLabel={false} setSettingsView={changeView} />
               </MenuSection>
 
-              <DownloadApp onClick={closeMenu} />
-              <Socials iconSize="25px" />
               {isConversionTrackingEnabled && <LegalAndPrivacyMenu closeMenu={closeMenu} />}
             </Flex>
           </Accordion>

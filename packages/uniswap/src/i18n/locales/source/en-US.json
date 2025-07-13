@@ -462,6 +462,7 @@
   "common.permit.cancelled": "Permit tx cancelled",
   "common.permit.failed": "Permit failed",
   "common.permit2": "Permit2",
+  "common.home": "Home",
   "common.pool": "Pool",
   "common.pools": "Pools",
   "common.poweredBy": "Powered by <name />",

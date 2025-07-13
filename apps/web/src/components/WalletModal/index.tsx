@@ -1,14 +1,14 @@
 import { useShowMoonpayText } from 'components/AccountDrawer/MiniPortfolio/hooks'
 import { MenuState, miniPortfolioMenuStateAtom } from 'components/AccountDrawer/constants'
-import { Page, downloadAppModalPageAtom } from 'components/NavBar/DownloadApp/Modal'
+// import { Page, downloadAppModalPageAtom } from 'components/NavBar/DownloadApp/Modal'
 import ConnectionErrorView from 'components/WalletModal/ConnectionErrorView'
-import { DownloadWalletRow } from 'components/WalletModal/DownloadWalletRow'
+// import { DownloadWalletRow } from 'components/WalletModal/DownloadWalletRow'
 import PrivacyPolicyNotice from 'components/WalletModal/PrivacyPolicyNotice'
 import { UniswapWalletOptions } from 'components/WalletModal/UniswapWalletOptions'
 import { AlternativeOption, EVMOption } from 'components/WalletModal/WalletConnectorOption'
 import { useOrderedConnections } from 'components/WalletModal/useOrderedConnections'
-import { useRecentConnectorId } from 'components/Web3Provider/constants'
-import { useModalState } from 'hooks/useModalState'
+// import { useRecentConnectorId } from 'components/Web3Provider/constants' // Temporarily commented out
+// import { useModalState } from 'hooks/useModalState'
 import { useAtom } from 'jotai'
 import { useReducer } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -18,12 +18,12 @@ import { Flex, Separator, Text } from 'ui/src'
 import { DoubleChevron } from 'ui/src/components/icons/DoubleChevron'
 import { DoubleChevronInverted } from 'ui/src/components/icons/DoubleChevronInverted'
 import { UniswapLogo } from 'ui/src/components/icons/UniswapLogo'
-import { CONNECTION_PROVIDER_IDS } from 'uniswap/src/constants/web3'
+// import { CONNECTION_PROVIDER_IDS } from 'uniswap/src/constants/web3'
 import { FeatureFlags } from 'uniswap/src/features/gating/flags'
 import { useFeatureFlag } from 'uniswap/src/features/gating/hooks'
-import { ModalName } from 'uniswap/src/features/telemetry/constants'
+// import { ModalName } from 'uniswap/src/features/telemetry/constants'
 import { isMobileWeb } from 'utilities/src/platform'
-import { useEvent } from 'utilities/src/react/hooks'
+// import { useEvent } from 'utilities/src/react/hooks'
 
 export default function WalletModal() {
   const { t } = useTranslation()
@@ -32,18 +32,18 @@ export default function WalletModal() {
   const [expandMoreWallets, toggleExpandMoreWallets] = useReducer((s) => !s, !isEmbeddedWalletEnabled)
   const [, setMenu] = useAtom(miniPortfolioMenuStateAtom)
   const connectors = useOrderedConnections({ showSecondaryConnectors: isMobileWeb })
-  const recentConnectorId = useRecentConnectorId()
+  // const recentConnectorId = useRecentConnectorId()
 
-  const showDownloadHeader =
-    !connectors.some((c) => c.id === CONNECTION_PROVIDER_IDS.UNISWAP_EXTENSION_RDNS) &&
-    recentConnectorId !== CONNECTION_PROVIDER_IDS.UNISWAP_WALLET_CONNECT_CONNECTOR_ID &&
-    isEmbeddedWalletEnabled
-  const { openModal: openGetTheAppModal } = useModalState(ModalName.GetTheApp)
-  const [, setPage] = useAtom(downloadAppModalPageAtom)
-  const handleOpenGetTheAppModal = useEvent(() => {
-    openGetTheAppModal()
-    setPage(Page.GetApp)
-  })
+  // const showDownloadHeader =
+  //   !connectors.some((c) => c.id === CONNECTION_PROVIDER_IDS.UNISWAP_EXTENSION_RDNS) &&
+  //   recentConnectorId !== CONNECTION_PROVIDER_IDS.UNISWAP_WALLET_CONNECT_CONNECTOR_ID &&
+  //   isEmbeddedWalletEnabled
+  // const { openModal: openGetTheAppModal } = useModalState(ModalName.GetTheApp)
+  // const [, setPage] = useAtom(downloadAppModalPageAtom)
+  // const handleOpenGetTheAppModal = useEvent(() => {
+  //   openGetTheAppModal()
+  //   setPage(Page.GetApp)
+  // })
   const px = 12
 
   return (
@@ -57,7 +57,8 @@ export default function WalletModal() {
       data-testid="wallet-modal"
     >
       <ConnectionErrorView />
-      {showDownloadHeader && (
+      {/* Temporarily commented out - Get Uniswap Wallet header */}
+      {/* {showDownloadHeader && (
         <Flex display="flex" $md={{ display: 'none' }}>
           <DownloadWalletRow
             onPress={handleOpenGetTheAppModal}
@@ -70,7 +71,7 @@ export default function WalletModal() {
             titleTextVariant="buttonLabel4"
           />
         </Flex>
-      )}
+      )} */}
       <Flex row justifyContent={isEmbeddedWalletEnabled ? 'center' : 'space-between'} width="100%">
         <Text variant="subheading2">
           {isEmbeddedWalletEnabled ? t('nav.logInOrConnect.title') : t('common.connectAWallet.button')}
@@ -117,13 +118,14 @@ export default function WalletModal() {
             transition={`${transitions.duration.fast} ${transitions.timing.inOut}`}
             data-testid="option-grid"
           >
-            {(recentConnectorId === CONNECTION_PROVIDER_IDS.UNISWAP_WALLET_CONNECT_CONNECTOR_ID || isMobileWeb) &&
+            {/* Temporarily commented out - Uniswap Mobile option */}
+            {/* {(recentConnectorId === CONNECTION_PROVIDER_IDS.UNISWAP_WALLET_CONNECT_CONNECTOR_ID || isMobileWeb) &&
               isEmbeddedWalletEnabled && (
                 <>
                   <EVMOption connectorId={CONNECTION_PROVIDER_IDS.UNISWAP_WALLET_CONNECT_CONNECTOR_ID} />
                   <Separator />
                 </>
-              )}
+              )} */}
             {connectors.map((c, index) => (
               <>
                 <EVMOption connectorId={c.id} key={c.uid} detected={c.isInjected} />
@@ -151,7 +153,8 @@ export default function WalletModal() {
           )}
         </Flex>
       </Flex>
-      {showDownloadHeader && (
+      {/* Temporarily commented out - Get Uniswap Wallet footer */}
+      {/* {showDownloadHeader && (
         <Flex display="none" $md={{ display: 'flex' }}>
           <DownloadWalletRow
             onPress={handleOpenGetTheAppModal}
@@ -164,7 +167,7 @@ export default function WalletModal() {
             titleTextVariant="buttonLabel4"
           />
         </Flex>
-      )}
+      )} */}
     </Flex>
   )
 }

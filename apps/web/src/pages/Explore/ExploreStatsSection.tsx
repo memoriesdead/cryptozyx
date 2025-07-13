@@ -79,7 +79,7 @@ const ExploreStatsSection = () => {
   ])
 
   return (
-    <Flex row width="100%">
+    /* <Flex row width="100%">
       {exploreStatsSectionData.map((data, index) => (
         <Flex
           key={data.label}
@@ -98,7 +98,8 @@ const ExploreStatsSection = () => {
           )}
         </Flex>
       ))}
-    </Flex>
+    </Flex> */
+    <></>
   )
 }
 

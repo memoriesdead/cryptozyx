@@ -1,5 +1,5 @@
 import { GooglePlayStoreLogo } from 'components/Icons/GooglePlayStoreLogo'
-import { DownloadWalletOption } from 'components/WalletModal/DownloadWalletOption'
+// import { DownloadWalletOption } from 'components/WalletModal/DownloadWalletOption' // Temporarily commented out
 import { DetectedBadge } from 'components/WalletModal/shared'
 import { useConnectorWithId } from 'components/WalletModal/useOrderedConnections'
 import { uniswapWalletConnect } from 'components/Web3Provider/walletConnect'
@@ -73,7 +73,8 @@ export function UniswapWalletOptions() {
             <DetectedBadge />
           </OptionContainer>
         ) : !isMobileWeb ? (
-          <DownloadWalletOption />
+          // <DownloadWalletOption /> // Temporarily commented out
+          null
         ) : null}
         <OptionContainer
           onPress={() => {

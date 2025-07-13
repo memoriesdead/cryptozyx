@@ -19,26 +19,20 @@ export const useMenuContent = (): MenuSection[] => {
 
   return [
     {
-      title: t('common.company'),
-      items: [
-        { label: t('common.careers'), href: 'https://careers.uniswap.org/' },
-        { label: t('common.blog'), href: 'https://blog.uniswap.org/' },
-      ],
+      title: t('common.home'),
+      items: [{ label: t('common.home'), href: '/', internal: true }],
     },
     {
-      title: t('common.protocol'),
-      items: [
-        { label: t('common.vote'), href: 'https://vote.uniswapfoundation.org' },
-        { label: t('common.governance'), href: 'https://uniswap.org/governance' },
-        { label: t('common.developers'), href: 'https://uniswap.org/developers' },
-      ],
+      title: t('common.trade'),
+      items: [{ label: t('common.trade'), href: '/swap', internal: true }],
     },
     {
-      title: t('common.needHelp'),
-      items: [
-        { label: t('common.helpCenter'), href: 'https://support.uniswap.org/hc/en-us' },
-        { label: t('common.contactUs.button'), href: 'https://support.uniswap.org/hc/en-us/requests/new' },
-      ],
+      title: t('common.explore'),
+      items: [{ label: t('common.explore'), href: '/explore', internal: true }],
+    },
+    {
+      title: t('common.pool'),
+      items: [{ label: t('common.pool'), href: '/positions', internal: true }],
     },
   ]
 }

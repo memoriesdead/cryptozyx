@@ -29,6 +29,11 @@ export const useTabsContent = (): TabsSection[] => {
 
   return [
     {
+      title: t('common.home'),
+      href: '/',
+      isActive: pathname === '/',
+    },
+    {
       title: t('common.trade'),
       href: '/swap',
       isActive: pathname.startsWith('/swap') || pathname.startsWith('/limit') || pathname.startsWith('/send'),

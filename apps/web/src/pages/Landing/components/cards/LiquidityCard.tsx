@@ -5,10 +5,10 @@ import { PillButton } from 'pages/Landing/components/cards/PillButton'
 import ValuePropCard from 'pages/Landing/components/cards/ValuePropCard'
 import { useTranslation } from 'react-i18next'
 
-const primary = '#9E62FF'
+const primary = '#00D4AA' // Changed to teal/green for crypto rewards theme
 
 export function LiquidityCard() {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const { rive, RiveComponent } = useRive({
     src: '/rive/landing-page.riv',
     artboard: 'LP',
@@ -18,15 +18,15 @@ export function LiquidityCard() {
 
   return (
     <ValuePropCard
-      to="/pool"
+      href="#" // Placeholder for crypto rewards feature
       smaller
       color={primary}
-      backgroundColor="rgba(136, 63, 255, 0.06)"
+      backgroundColor="rgba(0, 212, 170, 0.06)"
       $theme-dark={{
-        backgroundColor: 'rgba(136, 63, 255, 0.12)',
+        backgroundColor: 'rgba(0, 212, 170, 0.12)',
       }}
-      button={<PillButton color={primary} label={t('common.liquidity')} icon={<Bars size="24px" fill={primary} />} />}
-      titleText={t('landing.provideLiquidity.message')}
+      button={<PillButton color={primary} label="Crypto Rewards" icon={<Bars size="24px" fill={primary} />} />}
+      titleText="Earn crypto rewards on every transaction. Social payment incentives."
       alignTextToBottom
     >
       <CardContents>
